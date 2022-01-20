@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>云作品集</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .all{
+            background-color: #eee;
+        }
+        .header{
+            width: 100%;
+            display: flex;
+            padding: 0px 5px;
+            background-color:transparent;
+            position: fixed;
+            z-index: 5;
+        }
+        .header .logo{
+            text-align: center;
+            padding: 5px 0;
+        }
+        .header .logo a{
+            font-size: 32px;
+            color:#fff;
+            text-decoration: none;
+            text-shadow:0 0 0.3em black,0 0 0.3em black;
+        }
+        .header nav {
+            width: 100%;
+            font-size: 0;
+        }
+        .header nav a{
+            display: inline-block;
+            color:#fff;
+            line-height: 50px;
+            font-size: 25px;
+            text-decoration: none;
+            padding: 0 10px;
+            margin:10px 0;
+            text-shadow:0 0 0.2em black;
+        }
+        .header nav a:hover{
+            border-bottom: 2px solid #fff;
+        }
+        .banner{
+            width: 100%;
+            height: 940px;
+            background: linear-gradient(180deg, transparent 30%,#eee 100% ) center center / 100% 100%,
+            url("image/banner.jpg") center top / 100% auto;
+            position: relative;
+            display: flex;
+        }
+
+        .banner .about{
+            width: 900px;
+            background-color:rgba(255,255,255,0.6);
+            margin: auto;
+            border-radius: 5%;
+        }
+
+        .banner .about .wrap{
+            display: flex;
+            margin: auto;
+            width: 700px;
+        }
+        .banner .about .wrap h1{
+            width: 100%;
+            font-size: 42px;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .banner .about .wrap .pic{
+            margin: 20px 10px;
+            width: 300px;
+            text-align: center;
+        }
+        .banner .about .wrap .introduce{
+            margin: 20px 15px;
+            width: 610px;
+        }
+        .banner .about .wrap .introduce h2{
+            font-size: 20px;
+            padding: 10px 0 5px;
+        }
+        .banner .about .wrap .introduce p{
+            font-size: 18px;
+            line-height: 22px;
+        }
+        .Portfolio{
+            width: 100%;
+            display: flex;
+        }
+        .Portfolio .item{
+            width: 20%;
+            height: 940px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes W2_6{
+            0%{
+                width:20%;
+            }
+            100%{
+                width:60%;
+            }
+        }
+        @keyframes W6_2{
+            0%{
+                width:60%;
+            }
+            100%{
+                width:20%;
+            }
+        }
+        @keyframes W1_6{
+            0%{
+                width:10%;
+            }
+            100%{
+                width:60%;
+            }
+        }
+        @keyframes W6_1{
+            0%{
+                width:60%;
+            }
+            100%{
+                width:10%;
+            }
+        }
+        @keyframes W2_1{
+            0%{
+                width:20%;
+            }
+            100%{
+                width:10%;
+            }
+        }
+        @keyframes W1_2{
+            0%{
+                width:10%;
+            }
+            100%{
+                width:20%;
+            }
+        }
+
+        .Portfolio .item .pic img{
+            vertical-align: middle;
+        }
+        .Portfolio .item .title{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 200px;
+            height: 60px;
+            /* overflow: hidden; */
+            text-shadow:0 0 0.3em black,0 0 0.3em black;
+            text-align:center;
+        }
+
+        @keyframes titleMoveUp{
+            0%{
+                top:50%;
+            }
+            100%{
+                top:24%;
+            }
+        }
+
+        @keyframes titleMoveDw{
+            0%{
+                top:24%;
+            }
+            100%{
+                top: 50%;
+            }
+        }
+
+        .Portfolio .item .title h2{
+            font-size: 35px;
+            color: #fff;
+        }
+        .Portfolio .item .title h3{
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .Portfolio .item .Expertise{
+            position: absolute;
+            top: 54%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width:500px;
+            height:300px;
+            background-color: rgba(0,0,0, 0.5);
+            padding: 80px;
+            border-radius: 5%;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+        }
+
+        @keyframes ExpAppear{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+        @keyframes ExpDis{
+            0%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+
+
+        .Portfolio .item .Expertise p{
+            font-size: 22px;
+            line-height:30px;
+            color: #fff;
+        }
+
+        .Portfolio .item .link{
+            position: absolute;
+            bottom:-10%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 25px;
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            background-color:rgba(0,0,0, 0.4);
+        }
+        .Portfolio .item .link a{
+            text-decoration: none;
+            color: #fff;
+            text-shadow:0 0 0.2em black;
+        }
+
+        @keyframes linkUp{
+            0%{
+                bottom:-10%;
+            }
+            100%{
+                bottom: 10%;
+            }
+        }
+        
+        @keyframes linkDw{
+            0%{
+                bottom:10%;
+            }
+            100%{
+                bottom:-10%;
+            }
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div class="all">
+    <div class="header">
+        <div class="logo">
+            <a href="#" class="logo">
+                Yun Portfolio
+            </a>
+        </div>
+            <nav id="mainNav">
+                <a href="#">網頁設計</a>
+                <a href="#">遊戲美術</a>
+                <a href="#">插畫漫畫</a>
+                <a href="#">3D建模</a>
+                <a href="#">平面設計</a>
+            </nav>
+    </div>
+    <div class="banner">
+        <div class="about">
+            <div class="wrap">
+                <h1>關於我</h1>
+            </div>
+            <div class="wrap">
+                <div class="pic">
+                    <img src="me.jpg" alt="大頭照">
+                </div>
+                <div class="introduce">
+                    <h2>自傳</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing   elit. Consequuntur, recusandae ullam? Deleniti voluptates corporis neque, 
+                    nihil minima ipsa vitae quam saepe fugiat quod possimus. Quisquam culpa unde deserunt provident error.</p>
+                    <h2>工作經歷</h2>    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing   elit. Consequuntur, recusandae ullam? Deleniti voluptates corporis neque,
+                         nihil minima ipsa vitae quam saepe fugiat quod possimus. Quisquam culpa unde deserunt provident error.</p>
+                    <h2>擅長軟體&技能</h2>     
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing   elit. Consequuntur, recusandae ullam? Deleniti voluptates corporis neque, nihil minima ipsa vitae quam saepe fugiat quod possimus. Quisquam culpa unde deserunt provident error.</p>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div class="Portfolio"> 
+        <div class="item">
+            <div class="pic">
+                <img src="image/pic_1.png" alt="網頁設計">
+            </div>
+            <div class="title">
+                <h2>網頁設計</h2>
+                <h3>Web Design</h3>
+            </div>
+            <div class="Expertise">
+                <p>擅長使用html+css+javascript手刻網站，UI線框圖規劃</p>
+            </div>
+            <div class="link">
+                <a href="">Enter</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="image/pic_2.png" alt="遊戲美術">
+            </div>
+            <div class="title">
+                <h2>遊戲美術</h2>
+                <h3>Game Art</h3>
+            </div>
+            <div class="Expertise">
+                <p>遊戲logo，icon，ui，背景，人物...等設計繪製</p>
+            </div>
+            <div class="link">
+                <a href="">Enter</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="image/pic_3.png" alt="插畫漫畫">
+            </div>
+            <div class="title">
+                <h2>插畫漫畫</h2>
+                <h3>illustration and Comic</h3>
+            </div>
+            <div class="Expertise">
+                <p>充滿個人風格的繪本風插畫，</p>
+            </div>
+            <div class="link">
+                <a href="">Enter</a>
+            </div>
+        </div>
+        <div class="item"> 
+            <div class="pic">
+                <img src="image/pic_4.png" alt="3D建模">
+            </div>
+            <div class="title">
+                <h2>3D建模</h2>
+                <h3>3D modeling</h3>
+            </div>
+            <div class="Expertise">
+                <p>人物&背景的3D建模，三視圖繪製，</p>
+            </div>
+            <div class="link">
+                <a href="">Enter</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="image/pic_5.png" alt="平面設計">
+            </div>
+            <div class="title">
+                <h2>平面設計</h2>
+                <h3>graphic design</h3>
+            </div>
+            <div class="Expertise">
+                <p> LOGO設計，海報設計，平面設計，書籍&商品編輯設計送印經驗</p>
+            </div>
+            <div class="link">
+                <a href="">Enter</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="tools_picMove.js"></script>   
+</body>
+</html>
