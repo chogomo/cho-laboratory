@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>云作品集</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="reset.css">
     <style type="text/css">
         * {
             margin: 0;
             padding: 0;
             list-style: none;
+            font-family:  "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
         }
-
         .all{
             background-color: #eee;
         }
@@ -42,7 +43,7 @@
             display: inline-block;
             color:#fff;
             line-height: 50px;
-            font-size: 25px;
+            font-size: 22px;
             text-decoration: none;
             padding: 0 10px;
             margin:10px 0;
@@ -55,18 +56,16 @@
             width: 100%;
             height: 940px;
             background: linear-gradient(180deg, transparent 30%,#eee 100% ) center center / 100% 100%,
-            url("image/banner.jpg") center top / 100% auto;
+            url("image/banner.jpg") no-repeat center top /cover;
             position: relative;
             display: flex;
         }
-
         .banner .about{
             width: 900px;
             background-color:rgba(255,255,255,0.8);
             margin: auto;
-            border-radius: 5%;
+            border-radius: 20px;
         }
-
         .banner .about .wrap{
             display: flex;
             margin: auto;
@@ -74,12 +73,17 @@
         }
         .banner .about .wrap h1{
             width: 100%;
-            font-size: 42px;
+            font-size: 38px;
+            font-family:"微軟正黑體", sans-serif;
+            font-weight: 600;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0 10px;
         }
         .banner .about .wrap .pic{
-            margin: 60px 40px 0 0;
+            width: 450px;
+            height: 350px;
+            background:url(image/me.jpg) no-repeat center top/cover;
+            margin: 50px 30px 0 0;
             text-align: center;
         }
         .banner .about .wrap .introduce{
@@ -92,7 +96,7 @@
         }
         .banner .about .wrap .introduce p{
             font-size: 18px;
-            line-height: 22px;
+            line-height:1.2em;
         }
         .Portfolio{
             width: 100%;
@@ -104,7 +108,6 @@
             overflow: hidden;
             position: relative;
         }
-
         @keyframes W2_6{
             0%{
                 width:20%;
@@ -153,7 +156,6 @@
                 width:20%;
             }
         }
-
         .Portfolio .item .pic img{
             vertical-align: middle;
         }
@@ -164,38 +166,35 @@
             transform: translate(-50%,-50%);
             width: 200px;
             height: 60px;
-            /* overflow: hidden; */
-            text-shadow:0 0 0.3em black,0 0 0.3em black;
+            text-shadow:0 0 0.2em black,0 0 0.2em black,0 0 0.2em black;
             text-align:center;
         }
-
         @keyframes titleMoveUp{
             0%{
                 top:50%;
             }
             100%{
-                top:24%;
+                top:25%;
             }
         }
 
         @keyframes titleMoveDw{
             0%{
-                top:24%;
+                top:25%;
             }
             100%{
                 top: 50%;
             }
         }
-
         .Portfolio .item .title h2{
-            font-size: 35px;
+            font-size: 30px;
             color: #fff;
+            margin-bottom: 5px;
         }
         .Portfolio .item .title h3{
             font-size: 20px;
             color: #fff;
         }
-
         .Portfolio .item .Expertise{
             position: absolute;
             top: 54%;
@@ -203,14 +202,16 @@
             transform: translate(-50%,-50%);
             width:500px;
             height:300px;
-            background-color: rgba(0,0,0, 0.5);
+            background-color: rgba(0,0,0, 0.8);
             padding: 80px;
-            border-radius: 5%;
+            border-radius: 20px;
             display: flex;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            text-align: center;
             opacity: 0;
         }
-
         @keyframes ExpAppear{
             0%{
                 opacity: 0;
@@ -219,7 +220,6 @@
                 opacity: 1;
             }
         }
-
         @keyframes ExpDis{
             0%{
                 opacity: 1;
@@ -228,14 +228,17 @@
                 opacity: 0;
             }
         }
-
-
-        .Portfolio .item .Expertise p{
-            font-size: 22px;
-            line-height:30px;
+        .Portfolio .Expertise h4{
+            font-size: 24px;
+            line-height:1.5em;
+            color: #fff;
+            margin-top: 16px;
+        }
+        .Portfolio .Expertise p{
+            font-size: 18px;
+            line-height:1.5em;
             color: #fff;
         }
-
         .Portfolio .item .link{
             position: absolute;
             bottom:-10%;
@@ -244,37 +247,211 @@
             font-size: 25px;
             padding: 10px 20px;
             border: 2px solid #fff;
-            background-color:rgba(0,0,0, 0.4);
+            background-color:rgba(0,0,0, 0.8);
+            opacity:0;
         }
-        .Portfolio .item .link a{
+        .Portfolio .link a{
             text-decoration: none;
             color: #fff;
             text-shadow:0 0 0.2em black;
         }
-
         @keyframes linkUp{
             0%{
                 bottom:-10%;
+                opacity:0;
             }
             100%{
-                bottom: 10%;
+                bottom: 11%;
+                opacity:1;
             }
         }
         
         @keyframes linkDw{
             0%{
-                bottom:10%;
+                bottom:11%;
+                opacity:1;
             }
             100%{
                 bottom:-10%;
+                opacity:0;
+            }
+        }
+        @media screen and (max-width:768px){
+            .header .logo{
+                width: 90px;
+                margin: 3px 0 0 3px;
+            }
+            .header .logo a{
+                font-size: 20px;
+            }
+            .header nav{
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0,0,0, 0.8);
+                position: fixed;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                display: none;
+            }
+            .header nav a{
+                line-height: 40px;
+            }
+            .banner{
+                height:140vh;
+                justify-content: center;
+                align-items: center;
+            }
+            .banner .about{
+                width:80%;
+                height:115vh;
+                padding: 10px;
+            }
+            .banner .about .wrap{
+                flex-direction: column;
+                margin: auto;
+                width:100%;
+                text-align: center;
+            }
+            .banner .about .wrap .pic{
+                width: 250px;
+                height: 200px;
+            }
+            .banner .about .wrap h1{
+                font-size: 30px;
+                text-align: center;
+                padding: 15px 0;
+            }
+            .banner .about .wrap .pic{
+                margin: 10px auto;
+            }
+            .banner .about .wrap .introduce{
+                width: 100%;
+                margin:0;
+            }
+            .banner .about .wrap .introduce h2{
+                font-size: 20px;
+            }
+            .banner .about .wrap .introduce p{
+                font-size: 16px;
+            }
+            .Portfolio{
+                flex-direction: column;
+            }
+            .Portfolio .item{
+                width: 100%;
+                height:20vh;
+            }
+            @keyframes W2_6{
+                0%{
+                    height:20vh;
+                }
+                100%{
+                    height:60vh;
+                }
+            }
+            @keyframes W6_2{
+                0%{
+                    height:60vh;
+                }
+                100%{
+                    height:20vh;
+                }
+            }
+            @keyframes W1_6{
+                0%{
+                    height:10vh;
+                }
+                100%{
+                    height:60vh;
+                }
+            }
+            @keyframes W6_1{
+                0%{
+                    height:60vh;
+                }
+                100%{
+                    height:10vh;
+                }
+            }
+            @keyframes W2_1{
+                0%{
+                    height:20vh;
+                }
+                100%{
+                    height:10vh;
+                }
+            }
+            @keyframes W1_2{
+                0%{
+                    height:10vh;
+                }
+                100%{
+                    height:20vh;
+                }
+            }
+            .Portfolio .item .title h2{
+                font-size: 20px;
+                margin-top: 10px;
+            }
+            .Portfolio .item .title h3{
+                font-size: 14px;
+            }
+            @keyframes titleMoveUp{
+                0%{
+                    top:50%;
+                    opacity: 1;
+                }
+                100%{
+                    top:25%;
+                    opacity: 0;
+                }
+            }
+            @keyframes titleMoveDw{
+                0%{
+                    top:25%;
+                    opacity: 0;
+                }
+                100%{
+                    top: 50%;
+                    opacity: 1;
+                }
+            }
+            .Portfolio .item .Expertise{
+                width:100%;
+                height:60vh;
+                top:50%;
+                padding:0;
+                border-radius: 0;
+                box-sizing: border-box;
+                justify-content:center;
+            }
+            .Expertise .txt{
+                margin-bottom: 80px;
+            }
+            .Portfolio .Expertise h4{
+                font-size: 18px;
+                line-height:2em;
+                margin-top: 10px;
+            }
+            .Portfolio .Expertise p{
+                font-size: 12px;
+                line-height:1.5em;
+            }
+            .Portfolio .item .link{
+                bottom:0;
+                left: 50%;
+                transform: translate(-50%,-10%);
+                font-size: 20px;
+                padding: 5px 10px;
             }
         }
     </style>
-
-
 </head>
 <body>
-
 <div class="all">
     <div class="header">
         <div class="logo">
@@ -282,13 +459,13 @@
                 Yun Portfolio
             </a>
         </div>
-            <nav id="mainNav">
-                <a href="#">網頁設計</a>
-                <a href="#">遊戲美術</a>
-                <a href="#">插畫漫畫</a>
-                <a href="#">3D建模</a>
-                <a href="#">平面設計</a>
-            </nav>
+        <nav id="mainNav">
+            <a href="#">網頁設計</a>
+            <a href="#">遊戲美術</a>
+            <a href="#">插畫漫畫</a>
+            <a href="#">3D建模</a>
+            <a href="#">平面設計</a>
+        </nav>
     </div>
     <div class="banner">
         <div class="about">
@@ -297,7 +474,6 @@
             </div>
             <div class="wrap">
                 <div class="pic">
-                    <img src="me.jpg" alt="大頭照">
                 </div>
                 <div class="introduce">
                     <h2>自傳</h2>
@@ -318,11 +494,25 @@
                 <img src="image/pic_1.png" alt="網頁設計">
             </div>
             <div class="title">
-                <h2>網頁設計</h2>
-                <h3>Web Design</h3>
+                <h2>夕暮手作派</h2>
+                <h3>Sunset Pie</h3>
             </div>
             <div class="Expertise">
-                <p>擅長使用html+css+javascript手刻網站，UI線框圖規劃</p>
+                <div class="txt">
+                    <h4>手做派點心網站設計</h4>
+                    <p>
+                        RWD網頁，純練習的demo作品，以暖色調為主的點心網站
+                    </p>
+                    <h4>運用到的技術</h4>
+                    <p>
+                        純手刻Html，CSS，javascript＋一點jquery
+                    </p>
+                    <h4>素材來源</h4>
+                    <p>
+                        圖片素材:https://unsplash.com/?ref=techmoon
+                        icon來源:https://fontawesome.com/v4/icons/
+                    </p>
+                </div>
             </div>
             <div class="link">
                 <a href="">Enter</a>
@@ -333,14 +523,28 @@
                 <img src="image/pic_2.png" alt="遊戲美術">
             </div>
             <div class="title">
-                <h2>遊戲美術</h2>
-                <h3>Game Art</h3>
+                <h2>微創室內設計</h2>
+                <h3>Mini Interior Design</h3>
             </div>
             <div class="Expertise">
-                <p>遊戲logo，icon，ui，背景，人物...等設計繪製</p>
+                <div class="txt">
+                    <h4>手做派點心網站設計</h4>
+                    <p>
+                        RWD網頁，純練習的demo作品，以暖色調為主的點心網站
+                    </p>
+                    <h4>運用到的技術</h4>
+                    <p>
+                        純手刻Html，CSS，javascript＋一點jquery
+                    </p>
+                    <h4>素材來源</h4>
+                    <p>
+                        圖片素材:https://unsplash.com/?ref=techmoon
+                        icon來源:https://fontawesome.com/v4/icons/
+                    </p>
+                </div>
             </div>
             <div class="link">
-                <a href="">Enter</a>
+                <a href="https://chogomo.github.io/Interior-design/">Enter</a>
             </div>
         </div>
         <div class="item">
@@ -348,11 +552,25 @@
                 <img src="image/pic_3.png" alt="插畫漫畫">
             </div>
             <div class="title">
-                <h2>插畫漫畫</h2>
-                <h3>illustration and Comic</h3>
+                <h2>美術作品集</h2>
+                <h3>My Art Work</h3>
             </div>
             <div class="Expertise">
-                <p>充滿個人風格的繪本風插畫，</p>
+                <div class="txt">
+                    <h4>手做派點心網站設計</h4>
+                    <p>
+                        RWD網頁，純練習的demo作品，以暖色調為主的點心網站
+                    </p>
+                    <h4>運用到的技術</h4>
+                    <p>
+                        純手刻Html，CSS，javascript＋一點jquery
+                    </p>
+                    <h4>素材來源</h4>
+                    <p>
+                        圖片素材:https://unsplash.com/?ref=techmoon
+                        icon來源:https://fontawesome.com/v4/icons/
+                    </p>
+                </div>
             </div>
             <div class="link">
                 <a href="">Enter</a>
@@ -363,11 +581,26 @@
                 <img src="image/pic_4.png" alt="3D建模">
             </div>
             <div class="title">
-                <h2>3D建模</h2>
-                <h3>3D modeling</h3>
+                <h2>云網頁設計</h2>
+                <h3>Web Design</h3>
             </div>
             <div class="Expertise">
-                <p>人物&背景的3D建模，三視圖繪製，</p>
+                <div class="txt">
+                    <h4>網頁設計作品介紹</h4>
+                    <p>
+                        包含每個網頁的前期線框圖，設計稿一覽，
+                        並介紹我對網頁設計的理念
+                    </p>
+                    <h4>運用到的技術</h4>
+                    <p>
+                        Html，CSS，scss，bootstrap，javascript，jquery
+                    </p>
+                    <h4>素材來源</h4>
+                    <p>
+                        圖片素材:https://unsplash.com/?ref=techmoon
+                        icon來源:https://fontawesome.com/v4/icons/
+                    </p>
+                </div>
             </div>
             <div class="link">
                 <a href="">Enter</a>
@@ -378,11 +611,13 @@
                 <img src="image/pic_5.png" alt="平面設計">
             </div>
             <div class="title">
-                <h2>平面設計</h2>
-                <h3>graphic design</h3>
+                <h2>遊戲實驗室</h2>
+                <h3>Game Laboratory</h3>
             </div>
             <div class="Expertise">
-                <p> LOGO設計，海報設計，平面設計，書籍&商品編輯設計送印經驗</p>
+                <div class="txt">
+                    <p>施工中，尚未完成</p>
+                </div>
             </div>
             <div class="link">
                 <a href="">Enter</a>
