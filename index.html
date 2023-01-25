@@ -23,7 +23,7 @@
             padding: 0px 5px;
             background-color:transparent;
             position: fixed;
-            z-index: 5;
+            z-index: 1;
         }
         .header .logo{
             text-align: center;
@@ -230,13 +230,13 @@
             }
         }
         .Portfolio .Expertise h4{
-            font-size: 24px;
+            font-size: 20px;
             line-height:1.5em;
             color: #fff;
             margin-top: 16px;
         }
         .Portfolio .Expertise p{
-            font-size: 18px;
+            font-size: 16px;
             line-height:1.5em;
             color: #fff;
         }
@@ -245,16 +245,38 @@
             bottom:-10%;
             left: 50%;
             transform: translate(-50%,-50%);
-            font-size: 25px;
-            padding: 10px 20px;
-            border: 2px solid #fff;
-            background-color:rgba(0,0,0, 0.8);
+            font-size: 22px;
             opacity:0;
         }
         .Portfolio .link a{
+            display: inline-block;
+            background-color:rgba(0,0,0, 0.8);
+            border: 2px solid #fff;
+            padding: 10px 20px;
             text-decoration: none;
             color: #fff;
             text-shadow:0 0 0.2em black;
+        }
+        .design{
+            display: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index:5;
+            position:fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0,0.8);
+        }
+        .design img{
+            width: 60%;
+            margin: auto;
+        }
+        .de1{
+            display: none;
+        }
+        .de2{
+            display: none;
         }
         @keyframes linkUp{
             0%{
@@ -308,7 +330,6 @@
             }
             .banner .about{
                 width:80%;
-                height:115vh;
                 padding: 10px;
             }
             .banner .about .wrap{
@@ -319,24 +340,25 @@
             }
             .banner .about .wrap .pic{
                 width: 250px;
-                height: 200px;
+                height: 300px;
                 margin: 10px auto;
             }
             .banner .about .wrap h1{
-                font-size: 20px;
+                font-size: 24px;
                 text-align: center;
                 padding: 10px 0;
             }
             .banner .about .wrap .introduce{
                 width: 100%;
-                margin:0;
+                margin:10px 0;
             }
             .banner .about .wrap .introduce h2{
-                font-size: 18px;
+                font-size: 20px;
             }
             .banner .about .wrap .introduce p{
-                font-size: 10px;
+                font-size: 12px;
                 font-weight: 500;
+                line-height: 1.6em;
             }
             .Portfolio{
                 flex-direction: column;
@@ -445,7 +467,9 @@
                 bottom:0;
                 left: 50%;
                 transform: translate(-50%,-10%);
-                font-size: 20px;
+                font-size: 15px;
+            }
+            .Portfolio .item .link a{
                 padding: 5px 10px;
             }
         }
@@ -453,6 +477,14 @@
 </head>
 <body>
 <div class="all">
+    <div class="design de1" id="de1">
+        <i class="fa-solid fa-x"></i>
+        <img src="image/派網頁.png" alt="">
+    </div>
+    <div class="design de2" id="de2">
+        <i class="fa-solid fa-x"></i>
+        <img src="image/室內設計網頁.png" alt="">
+    </div>
     <div class="header">
         <div class="logo">
             <a href="#" class="logo">
@@ -526,7 +558,8 @@
                 </div>
             </div>
             <div class="link">
-                <a href="https://chogomo.github.io/cho-dessert/">Enter</a>
+                <a id="toDesign1" href="javascript:;">設計稿</a>
+                <a class="inWeb" href="https://chogomo.github.io/cho-dessert/">進入網站</a>
             </div>
         </div>
         <div class="item">
@@ -555,7 +588,8 @@
                 </div>
             </div>
             <div class="link">
-                <a href="https://chogomo.github.io/Interior-design/">Enter</a>
+                <a id="toDesign2" href="javascript:;">設計稿</a>
+                <a class="inWeb" href="https://chogomo.github.io/Interior-design/">進入網站</a>
             </div>
         </div>
         <div class="item">
@@ -584,7 +618,7 @@
                 </div>
             </div>
             <div class="link">
-                <a href="https://chogomo.github.io/ArtWork/">Enter</a>
+                <a class="inWeb" href="https://chogomo.github.io/ArtWork/">進入網站</a>
             </div>
         </div>
         <div class="item"> 
@@ -613,7 +647,8 @@
                 </div>
             </div>
             <div class="link">
-                <a href="https://github.com/chogomo/sendFood">Enter</a>
+                <a href="javascript:;">展示影片</a>
+                <a class="inWeb" href="https://github.com/chogomo/sendFood">github頁面</a>
             </div>
         </div>
         <div class="item">
@@ -630,11 +665,11 @@
                 </div>
             </div>
             <div class="link">
-                <a href="">Enter</a>
+                <a class="inWeb" href="">進入網站</a>
             </div>
         </div>
     </div>
 </div>
-<script src="tools_picMove.js"></script>   
+<script src="tools_picMove.js"></script> 
 </body>
 </html>

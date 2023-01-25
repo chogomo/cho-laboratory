@@ -82,4 +82,35 @@ window.onload=function () {
 
     navdis(banner);
 
+    //取得設計稿a標籤
+    var toDesign1 = document.getElementById("toDesign1");
+    var toDesign2 = document.getElementById("toDesign2");
+    //取得設計稿
+    var design1 = document.getElementById("de1");
+    var design2 = document.getElementById("de2");
+    var allInWeb = document.querySelectorAll(".inWeb");
+
+    toDesign1.onclick=function (event){
+        event = event || window.event;
+        event.cancelBubble = true;
+        design1.style.display="flex";
+    };
+    design1.onclick=function (){
+        design1.style.display="none";
+    }
+    toDesign2.onclick=function (event){
+        event = event || window.event;
+        event.cancelBubble = true;
+        design2.style.display="flex";
+    };
+    design2.onclick=function (){
+        design2.style.display="none";
+    }
+    //替所有進入網站綁定函數
+    for (let i = 0; i < allInWeb.length; i++) {
+        allInWeb[i].onclick=function (event){
+            event = event || window.event;
+            event.cancelBubble = true;
+        }  
+    }
 };
