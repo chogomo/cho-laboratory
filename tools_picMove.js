@@ -85,10 +85,13 @@ window.onload=function () {
     //取得設計稿a標籤
     var toDesign1 = document.getElementById("toDesign1");
     var toDesign2 = document.getElementById("toDesign2");
+    var toVideo = document.getElementById("toVideo");
     //取得設計稿
     var design1 = document.getElementById("de1");
     var design2 = document.getElementById("de2");
     var allInWeb = document.querySelectorAll(".inWeb");
+    var sendFoodVideo = document.getElementById("sendFoodVideo");
+    var close = document.getElementById("close");
 
     toDesign1.onclick=function (event){
         event = event || window.event;
@@ -105,6 +108,14 @@ window.onload=function () {
     };
     design2.onclick=function (){
         design2.style.display="none";
+    }
+    toVideo.onclick=function (event){
+        event = event || window.event;
+        event.cancelBubble = true;
+        sendFoodVideo.style.display="flex";
+    }
+    close.onclick=function (){
+        sendFoodVideo.style.display="none";
     }
     //替所有進入網站綁定函數
     for (let i = 0; i < allInWeb.length; i++) {

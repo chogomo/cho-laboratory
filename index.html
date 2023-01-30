@@ -258,7 +258,6 @@
             text-shadow:0 0 0.2em black;
         }
         .design{
-            display: none;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -277,6 +276,29 @@
         }
         .de2{
             display: none;
+        }
+        .showvideo{
+            width: 100%;
+            height: 100vh;
+            display: none;
+            position:fixed;
+            flex-direction: column;
+            z-index:8;
+            background-color: rgba(0, 0, 0,0.8);
+        }
+        .showvideo video{
+            position: relative;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
+            width: 1000px;
+        }
+        .showvideo img{
+            position: relative;
+            margin: 220px auto 0;
+            width: 30px;
+            height: 30px;
+            cursor: pointer; 
         }
         @keyframes linkUp{
             0%{
@@ -478,12 +500,16 @@
 <body>
 <div class="all">
     <div class="design de1" id="de1">
-        <i class="fa-solid fa-x"></i>
         <img src="image/派網頁.png" alt="">
     </div>
     <div class="design de2" id="de2">
-        <i class="fa-solid fa-x"></i>
         <img src="image/室內設計網頁.png" alt="">
+    </div>
+    <div class="showvideo" id= "sendFoodVideo"> 
+        <video controls> 
+            <source src="image/sendFood.mp4" type="video/mp4">
+        </video>
+        <img id="close" src="image/close.png" alt="叉">    
     </div>
     <div class="header">
         <div class="logo">
@@ -647,7 +673,7 @@
                 </div>
             </div>
             <div class="link">
-                <a href="javascript:;">展示影片</a>
+                <a id="toVideo" href="javascript:;">展示影片</a>
                 <a class="inWeb" href="https://github.com/chogomo/sendFood">github頁面</a>
             </div>
         </div>
